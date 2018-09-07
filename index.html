@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <h1> <title> Ramona's FCC Memory Game </title></h1>
+
+  <link rel="stylesheet" href="css/mem.css">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- stars -->
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1 class="title"> Grit and Tenacity </h1>
+    </header>
+
+    <!-- ScorePanel stars - timer - reset -->
+
+
+    <section class="scoreheader">
+
+      <ul class="stars">
+        <li>
+          <i id="star1" class="fa fa-star fa-2x"></i>
+        </li>
+        <li>
+          <i id="star2" class="fa fa-star fa-2x"></i>
+        </li>
+        <li>
+          <i id="star3" class="fa fa-star fa-2x"></i>
+        </li>
+      </ul>
+
+      <!--moves -->
+      <span class="moves">0</span>
+      <span class="move">Moves</span>
+      <!--timer-->
+      <span class="timer">0:00</span>
+    </section>
+
+    <!--restart-->
+    <div id= "resetBtn" class = "reset">reset
+      <i class="fa fa-repeat"></i>
+    </div>
+    <!-- </section> -->
+
+
+    <!--modal Brad Traversy https://www.youtube.com/watch?v=6ophW7Ask_0 need to reset game to Play again button 
+    <button id="modalBtn" class="button">Play Again!!!</button>also the reset button-->
+    <!--need this inside the modal not outside -->
+
+    <div id="simpleModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="closeBtn">&times;</span>
+          <h2> Yeah !!!! </h2>
+        </div>
+
+        <div class="modal-body">
+          <h3>Congratulations!</h3>
+          <div>Your finishing time is
+            <div class="clock"> 0:00 </div>          
+            <div class= "moves"></div>  
+          </div>
+
+            <ul style="list-style-type: none" class="stars">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+          
+
+        </div>
+        <div class="modal-footer">
+          <h3>That's what we got !!!</h3>
+          <button id="modalBtn" class="replay" onclick="restartGame()">Play Again!!!</button>
+
+
+        </div>
+      </div>
+    </div>
+
+    <!--game board-->
+    <section class="fcc memory-game">
+
+      <div class="memory-card" data-card="FtKnox1">
+        <img class="front-face" src="img2/FtKnox1.svg" alt="Ft. Knox1" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="FtKnox1">
+        <img class="front-face" src="img2/FtKnox1.svg" alt="Ft. Knox1" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="ohioSprint18">
+        <img class="front-face" src="img2/ohioSprint18.svg" alt="Ohio" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="ohioSprint18">
+        <img class="front-face" src="img2/ohioSprint18.svg" alt="Ohio" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="WD firejump">
+        <img class="front-face" src="img2/WD firejump.svg" alt="WD firejump" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="WD firejump">
+        <img class="front-face" src="img2/WD firejump.svg" alt="WD firejump" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="WD together">
+        <img class="front-face" src="img2/WD together.svg" alt="html" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="WD together">
+        <img class="front-face" src="img2/WD together.svg" alt="html" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="warriordash">
+        <img class="front-face" src="img2/warriordash.svg" alt="warriordash" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="warriordash">
+        <img class="front-face" src="img2/warriordash.svg" alt="warriordash" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="dirty">
+        <img class="front-face" src="img2/dirty.svg" alt="Dirty David" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="dirty">
+        <img class="front-face" src="img2/dirty.svg" alt="Dirty David" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="FtKnox2">
+        <img class="front-face" src="img2/FtKnox2.svg" alt="FT Knox2" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="FtKnox2">
+        <img class="front-face" src="img2/FtKnox2.svg" alt="FT Knox2" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="spartan fire jump">
+        <img class="front-face" src="img2/spartan fire jump.svg" alt="spartan fire jump" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+
+      <div class="memory-card" data-card="spartan fire jump">
+        <img class="front-face" src="img2/spartan fire jump.svg" alt="spartana fire jump" />
+        <img class="back-face" src="img2/spartan trifecta helmet.svg" alt="spartan trifecta" />
+      </div>
+     
+      <!--background hide -->
+      <!--body-->
+      <!--heading with title -->
+      <!--stats  time/stars/moves-->
+      <!--replay buttons yes/no -->
+      <!---->
+      <!---->
+  
+  </section>
+
+</div>
+  <script src="js/mem2.js"></script>
+</body>
+</html>
