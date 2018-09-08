@@ -20,7 +20,7 @@ function flipCard() {
         firstCard = this;
         startTimer();
         return;
-
+        
     }
 
     //second click        
@@ -29,12 +29,16 @@ function flipCard() {
     addMove();
     removeStars();
     
+
 }
 
 function checkForMatch() {
-    let isMatch = firstCard.dataset.card === secondCard.dataset.card; //this is if its a match
+    let isMatch = firstCard.dataset.card === secondCard.dataset.card;    //this is if its a match
     isMatch ? disableCards() : unflipCards();
-    
+    if(isMatch){
+        match.play();
+    }
+       
 }
 
 //if => 8 modal popup still need to configure this 
@@ -42,20 +46,20 @@ function disableCards() {
     firstCard.removeEventListener('click', flipCard); //remove the eventListener if it's a match. You have to add the event and the function that you called 
     secondCard.removeEventListener('click', flipCard); //remove the eventListener if it's a match
     resetCard();
-    matchCount++;
+    matchCount++;    
     console.log(matchCount);
     //if matchCount equals 8, all cards have been successfully matched and the game is over.
     if (matchCount >= 8) {
         gameOver();
-        
+
     }
 
 }
 
 function gameOver() {
     stopTimer();
-    openModal();    
-    applause.play();
+    openModal();
+    aroo.play();
 }
 
 // if they don't match 
@@ -69,22 +73,22 @@ function unflipCards() {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
         resetCard();
-        
+
     }, 600);
-   
+
 }
 
 function resetCard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
-    
+
 }
 
 function shuffle() {
     cards.forEach(card => {
         let randomPos = Math.floor(Math.random() * 16);
         card.style.order = randomPos;
-        
+
     });
 }
 
@@ -94,26 +98,28 @@ function addMove() {
     moves++;
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
-    
+
 }
 if (hasFlippedCard.length === 2) {
     //checkForMatch(clickTarget);
+ 
 }
 
 function removeStars() {
     if (moves === 10 || moves === 20 || moves === 30) {
-        removeStar();     
-            }
+        removeStar();
+        
+    }
 }
 
 function removeStar() {
     let starsList = document.querySelectorAll('.stars li');
-    for (stars of starsList) {        
+    for (stars of starsList) {
         if (stars.style.display !== 'none') {
-            stars.style.display = 'none';            
+            stars.style.display = 'none';
             break; //need to find out what break does             
         }
-        
+
     }
 }
 removeStars();
@@ -138,7 +144,7 @@ function restartGame() {
     moves = 0;
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
-    yeah.play();
+    applause.play();
 }
 //restartBtn = document.getElementsByClassName("resetBtn");
 
@@ -221,12 +227,13 @@ let resetBtn =
     document.getElementById('resetBtn')
 resetBtn.addEventListener('click', resetPlay, false)
 
+
 function resetPlay() {
     stopTimer();
     resetTimer();
     resetMoves();
     resetStars();
-    
+
 }
 // 9-4 fixed my moves function with the help of Danny 
 function resetMoves() {
@@ -234,12 +241,13 @@ function resetMoves() {
     let moves = 0;
     movesText.innerHTML = moves;
 
+    
 }
 let noMatch = new Audio("audio/noMatch.mp3");
 let applause = new Audio("audio/Ovation.mp3");
 let match = new Audio("audio/match.mp3");
 let yeah = new Audio("audio/match.mp3");
-let help = new Audio("audio/help-me.mp3");
+let aroo = new Audio("audio/aroo.mp3");
 shuffle();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
