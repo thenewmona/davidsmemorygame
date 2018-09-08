@@ -248,7 +248,7 @@ let noMatch = new Audio("audio/noMatch.mp3");
 let applause = new Audio("audio/Ovation.mp3");
 let match = new Audio("audio/match.mp3");
 let yeah = new Audio("audio/match.mp3");
-let spartan = new Audio("audio/aroo.mp3");
+let spartan = new Audio("audio/AROO.mp3");
 let cheer = new Audio("audio/fans.mp3");
 shuffle();
 
