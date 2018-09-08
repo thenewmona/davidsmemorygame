@@ -170,21 +170,21 @@ body {
 }
 
 .modal {
+    position:absolute;
     display: none;
-    position: fixed;
     z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
+    top:100px;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    /*overflow: auto;*/
     background-color: rgba(7, 1, 17, 0.4);
 }
 
 .modal-content {
     background-color: #15f032;
-    margin: 30% auto;
+    /*margin: 30% auto;*/
     width: 40%;
+    margin: auto;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
     animation-name: modalopen;
     animation-duration: 3s;
@@ -193,7 +193,7 @@ body {
 
 .modal-header h2,
 .modal-footer h3 {
-    margin: 0;
+    /*margin: 0;*/
 }
 
 .modal-header {
