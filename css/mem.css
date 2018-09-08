@@ -19,7 +19,8 @@ body {
     display: flex;
     background: rgb(75, 13, 100);
     background: linear-gradient(rgb(192, 12, 12),rgb(3, 3, 207),rgb(70, 231, 6));
-    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     
     /* height: 80vh;
     display: flex;
