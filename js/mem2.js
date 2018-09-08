@@ -55,6 +55,7 @@ function disableCards() {
     }
 
 }
+//not sure why this won't play
 
 function gameOver() {
     stopTimer();
