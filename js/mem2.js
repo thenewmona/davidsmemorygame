@@ -45,7 +45,7 @@ function disableCards() {
     matchCount++;
     console.log(matchCount);
     //if matchCount equals 8, all cards have been successfully matched and the game is over.
-    if (matchCount >= 8) {
+    if (matchCount >= 0) {
         gameOver();
         
     }
@@ -213,7 +213,7 @@ function outsideClick(e) {
 function resetStars() {
     let starsList = document.querySelectorAll('.stars li');
     for (stars of starlist) {
-        stars.style.display = 'inline';
+        stars.style.display = 'block';
     }
 }
 //9-4reset game button with help from Danny Smith 9-4
@@ -230,7 +230,7 @@ function resetPlay() {
 }
 // 9-4 fixed my moves function with the help of Danny 
 function resetMoves() {
-    const movesText = document.querySelector('.moves');
+    const movesText = document.querySelector('moves');
     let moves = 0;
     movesText.innerHTML = moves;
 
