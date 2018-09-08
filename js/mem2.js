@@ -59,7 +59,7 @@ function disableCards() {
 function gameOver() {
     stopTimer();
     openModal();
-    aroo.play();
+  cheer.play();
 }
 
 // if they don't match 
@@ -248,6 +248,7 @@ let applause = new Audio("audio/Ovation.mp3");
 let match = new Audio("audio/match.mp3");
 let yeah = new Audio("audio/match.mp3");
 let aroo = new Audio("audio/aroo.mp3");
+let cheer = new Audio("audio/fans.mp3");
 shuffle();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
