@@ -145,7 +145,7 @@ function restartGame() {
     moves = 0;
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
-    applause.play();
+    spartan.play();
 }
 //restartBtn = document.getElementsByClassName("resetBtn");
 
