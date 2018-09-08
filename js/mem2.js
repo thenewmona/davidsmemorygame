@@ -60,7 +60,7 @@ function disableCards() {
 function gameOver() {
     stopTimer();
     openModal();
-  spartan.play();
+  aroo.play();
 }
 
 // if they don't match 
@@ -145,7 +145,7 @@ function restartGame() {
     moves = 0;
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
-    spartan.play();
+   aroo.play();
 }
 //restartBtn = document.getElementsByClassName("resetBtn");
 
@@ -248,7 +248,7 @@ let noMatch = new Audio("audio/noMatch.mp3");
 let applause = new Audio("audio/Ovation.mp3");
 let match = new Audio("audio/match.mp3");
 let yeah = new Audio("audio/match.mp3");
-let spartan = new Audio("audio/AROO.mp3");
+let aroo = new Audio("audio/AROO.mp3");
 let cheer = new Audio("audio/fans.mp3");
 shuffle();
 
