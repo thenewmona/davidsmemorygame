@@ -20,7 +20,7 @@ function flipCard() {
         firstCard = this;
         startTimer();
         return;
-        
+
     }
 
     //second click        
@@ -28,17 +28,17 @@ function flipCard() {
     checkForMatch();
     addMove();
     removeStars();
-    
+
 
 }
 
 function checkForMatch() {
-    let isMatch = firstCard.dataset.card === secondCard.dataset.card;    //this is if its a match
+    let isMatch = firstCard.dataset.card === secondCard.dataset.card; //this is if its a match
     isMatch ? disableCards() : unflipCards();
-    if(isMatch){
+    if (isMatch) {
         match.play();
     }
-       
+
 }
 
 //if => 8 modal popup still need to configure this 
@@ -46,7 +46,7 @@ function disableCards() {
     firstCard.removeEventListener('click', flipCard); //remove the eventListener if it's a match. You have to add the event and the function that you called 
     secondCard.removeEventListener('click', flipCard); //remove the eventListener if it's a match
     resetCard();
-    matchCount++;    
+    matchCount++;
     console.log(matchCount);
     //if matchCount equals 8, all cards have been successfully matched and the game is over.
     if (matchCount >= 8) {
@@ -60,7 +60,7 @@ function disableCards() {
 function gameOver() {
     stopTimer();
     openModal();
-  aroo.play();
+    aroo.play();
 }
 
 // if they don't match 
@@ -103,13 +103,13 @@ function addMove() {
 }
 if (hasFlippedCard.length === 2) {
     //checkForMatch(clickTarget);
- 
+
 }
 
 function removeStars() {
     if (moves === 10 || moves === 20 || moves === 30) {
         removeStar();
-        
+
     }
 }
 
@@ -145,7 +145,7 @@ function restartGame() {
     moves = 0;
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
-   aroo.play();
+    aroo.play();
 }
 //restartBtn = document.getElementsByClassName("resetBtn");
 
@@ -242,7 +242,7 @@ function resetMoves() {
     let moves = 0;
     movesText.innerHTML = moves;
 
-    
+
 }
 let noMatch = new Audio("audio/noMatch.mp3");
 let applause = new Audio("audio/Ovation.mp3");
